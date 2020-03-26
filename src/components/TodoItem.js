@@ -14,10 +14,15 @@ export default class TodoItem extends Component {
             
             
             <div className="todo-icon">
+              {
+                  isCompleted ? <span className="mx-2 text-danger" >
+                  <i className="fas fa-pen"></i>
+                  </span>  :  <span className="mx-2 text-success" onClick={handleEdit}>
+                  <i className="fas fa-pen"></i>
+                  </span>
+            }
                 
-            <span className="mx-2 text-success" onClick={handleEdit}>
-            <i className="fas fa-pen"></i>
-            </span>
+          
 
 
             <span className="mx-2 text-danger" onClick={handleDelete}>

@@ -76,13 +76,15 @@ const update = this.state.items;
   handleEdit = (id) => {
 
 
-    console.log(id);
+  //  console.log(id);
 
     const FilteredItems = this.state.items.filter(item => item.id !== id); // create new array (not include that item)
 
     const selectedItem = this.state.items.find(item => item.id === id)
 
-    console.log(selectedItem);
+  //  console.log(selectedItem);
+
+  //  console.log('FilteredItems',FilteredItems);
 
     this.setState({
       items:FilteredItems,
@@ -97,7 +99,7 @@ const update = this.state.items;
 
   handleCompleted = (id)=> {
 
-    console.log(id);
+    //console.log(id);
 
     // items arry 0 - id,title,completed=false
 
@@ -111,7 +113,7 @@ const update = this.state.items;
 
     const selectedItem = this.state.items.find(item => item.id === id);
 
-    console.log(selectedItem);
+  //  console.log(selectedItem);
 
    const itemss = this.state.items;
    console.log('items',itemss);
@@ -127,17 +129,27 @@ const update = this.state.items;
     itemss.map(item => {
       if (item.id === selectedItem.id) {
         item.completed = true;
+        return item;
       } else {
         return itemss;
       }
     });
 
-    console.log('itemssss',itemss);
-    
+    const selectedItem1 = itemss.find(item => item.id === id);
 
+    console.log('itemssss',itemss);
+    console.log('selectedItem1',selectedItem1);
+
+    const FilteredItems = this.state.items.filter(item => item.id !== id);
+    
+    const latestArr =  FilteredItems;
+
+    latestArr.push(selectedItem1);
+
+    console.log('latestArr',latestArr);
 
     this.setState({
-      items : itemss
+      items : latestArr
     })
   
    
