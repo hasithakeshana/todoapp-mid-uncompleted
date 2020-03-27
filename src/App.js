@@ -1,11 +1,12 @@
 import React , {Component} from 'react';
 
 import Input from './components/Inputs';
-import TodoList from './components/TodoList';
+import TodoList from './components/List';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import uuid from "uuid";
 import { v4 as uuidv4 } from 'uuid';
+import Header from './components/Header';
 
 class App extends Component{
 
@@ -15,7 +16,7 @@ class App extends Component{
     id:uuidv4(),
     item: '',
     editItem:false,
-    completedItem:false
+    //completedItem:false
   }
 
   handleChange = (e) =>{
@@ -162,11 +163,13 @@ const update = this.state.items;
 
     return (
 
-      
-   <div className="container">
+
+     
+   <div className="container  p-3  bg- peach-gradient" > 
+      <Header> </Header>
      <div className="row">
        <div className="col-10 mx-auto col-md-8 mt-4">
-      <h3 className = "text-capitalize text-center">to do input </h3>
+      <h3 className = " text-center">to do input </h3>
 
        <Input 
        item={this.state.item}  
@@ -179,20 +182,21 @@ const update = this.state.items;
         </Input>
        <TodoList
         items={this.state.items}  
-        clearList={this.clearList} 
         handleDelete={this.handleDelete}
         handleEdit = {this.handleEdit}
         handleCompleted = {this.handleCompleted}
-        completedItem = {this.state.completedItem}
+       
        
          ></TodoList>
 
        </div>
 
+       
 
      </div>
 
    </div>
+
       );
 
   }

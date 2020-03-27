@@ -12,17 +12,17 @@ export default class Inputs extends Component {
                 <div className = "input-group">
                 <div className = "input-group-prepend">
                 <div className = "input-group-text bg-primary text-white">
-                <i className="fas fa-book"></i>
+                <i className="far fa-check-circle"></i>      
                  </div>
                 </div>
-                <input type ="text" className="form-control" placeholder="add item" 
+                <input type ="text" className="form-control " placeholder="add item" 
                
                 value ={item}
                 onChange={handleChange}
                 ></input>
                 </div>
                 <button type="submit" className={
-                    editItem ? "btn btn-block btn-success mt-3" : "btn btn-block btn-primary mt-3"
+                    editItem ? "btn btn-block btn-success mt-3" : "btn btn-danger btn-block  mt-3"
 
                 }>
                     
