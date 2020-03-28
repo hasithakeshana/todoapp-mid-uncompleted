@@ -10,11 +10,14 @@ export class Header extends Component {
     render() {
         return (
             <div class="card text-center ">
-            <div class="card-header bg- rgba(0, 188, 212, 0.7) rgba-cyan-strong">
+            <div class="card-header bg- blue-gradient">
               <ul class="nav nav-pills card-header-pills">
+              
                 <li class="nav-item">
                 <img src="https://media.giphy.com/media/Yrm1zxVt6jhdjhYdpf/giphy.gif" width="15%"></img>
+                
                 </li>
+                
                 
                 
                
@@ -30,10 +33,12 @@ export class Header extends Component {
                 </div>
                 
                 <div class="col-md-5">
-            <h1><font color="#0F0B2E">TODO APP</font></h1>
-            <p>This application can add item to list and also can edit delete item from list. 
-                Items can add complite items table.
+            <h2><font color="#0F0B2E">TODO APP</font></h2>
+            <p>
+            Note : Cannot Enter null values as items , add notifications for each functionality , (add all functinalities mentioned in the assignment) 
+
             </p>
+          
             </div></div>
            
            

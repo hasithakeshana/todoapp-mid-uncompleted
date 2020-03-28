@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //import uuid from "uuid";
 import { v4 as uuidv4 } from 'uuid';
 import Header from './components/Header';
-
+import {NotificationContainer, NotificationManager} from 'react-notifications';
 class App extends Component{
 
   state={
@@ -31,11 +31,15 @@ class App extends Component{
 
     e.preventDefault();
 
-    const newItem = {
-      id : this.state.id,
-      title:this.state.item,
-      completed:false
-    }
+    if(this.state.item !== ""){
+
+
+
+const newItem = {
+  id : this.state.id,
+  title:this.state.item,
+  completed:false
+}
 
 
 //     let cats = ['Bob'];
@@ -45,25 +49,32 @@ class App extends Component{
 // cats.unshift('Puff', 'George'); // ['Puff', 'George', 'Willy', 'Bob']
 
 const update = this.state.items;
- update.unshift(newItem);
+update.unshift(newItem);
 
-   // const updateArray = [...this.state.items,newItem]; // newArray
+// const updateArray = [...this.state.items,newItem]; // newArray
 
-    this.setState({
-      items : update,
-      item : '',
-      id:uuidv4(),
-      editItem:false
-    })
+this.setState({
+  items : update,
+  item : '',
+  id:uuidv4(),
+  editItem:false
+},  NotificationManager.success('Item Added to TodoList', 'Success')    )
 
-   console.log(this.state);
+console.log(this.state);
+    }
+
+    else{
+      NotificationManager.error('Items cannot be null', 'Failed', 5000, () => {
+        alert('callback');
+      });
+
+    }
+
+   
+ 
   };
 
-  clearList = ()=>{
-    this.setState({
-      items:[]
-    })
-  }
+  
 
   handleDelete = (id) => {
 
@@ -71,7 +82,9 @@ const update = this.state.items;
 
     this.setState({
       items : FilteredItems
-    })
+    }, NotificationManager.error('Item Removed from TodoList', 'Removed', 5000, () => {
+      alert('callback');
+    }))
   }
 
   handleEdit = (id) => {
@@ -151,7 +164,7 @@ const update = this.state.items;
 
     this.setState({
       items : latestArr
-    })
+    },NotificationManager.warning('Completed and cannot Edit', 'Completed Item', 3000))
   
    
   }
@@ -169,7 +182,7 @@ const update = this.state.items;
       <Header> </Header>
      <div className="row">
        <div className="col-10 mx-auto col-md-8 mt-4">
-      <h3 className = " text-center">to do input </h3>
+      <h3 className = "text-center">  <font color="#000000 black">ADD ITEM</font> </h3>
 
        <Input 
        item={this.state.item}  

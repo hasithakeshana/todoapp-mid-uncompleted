@@ -22,8 +22,8 @@ export default class TodoItem extends Component {
               {
                   isCompleted ? <span className="mx-2 text-danger" >
                  
-                  </span>  :  <span className="mx-2 text-success" onClick={handleEdit}>
-                  <i className="far fa-edit"></i>
+                  </span>  :  <span className="mx-2 text-primary" onClick={handleEdit}>
+                  <i className="far fa-edit "></i>
                   </span>
              }
               
@@ -32,7 +32,7 @@ export default class TodoItem extends Component {
 
             <span className="mx-2 text-danger" onClick={handleDelete}>
             <i className="fas fa-trash"></i> 
-            </span>
+            &nbsp;&nbsp;</span>
 
 
              {
@@ -43,8 +43,7 @@ export default class TodoItem extends Component {
           
             
             
-           
-
+        
 
             </div>
 

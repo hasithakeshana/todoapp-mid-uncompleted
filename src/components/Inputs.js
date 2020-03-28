@@ -6,7 +6,7 @@ export default class Inputs extends Component {
         const {item,handleChange,handleSubmit,editItem} = this.props;
 
         return (
-            <div className="card card-body my-3">
+            <div className="card card-body my-3">             
 
                <form onSubmit={handleSubmit}>
                 <div className = "input-group">
@@ -22,7 +22,7 @@ export default class Inputs extends Component {
                 ></input>
                 </div>
                 <button type="submit" className={
-                    editItem ? "btn btn-block btn-success mt-3" : "btn btn-danger btn-block  mt-3"
+                    editItem ? "btn btn-block purple-gradient mt-3" : "btn blue-gradient btn-block  mt-3"
 
                 }>
                     
